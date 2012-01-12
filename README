@@ -1,0 +1,1 @@
+Example application using Jersey to provide a JSON/REST backend to a Sammy.js client application. Goal is to have full test-coverage of both Java and JavaScript.
