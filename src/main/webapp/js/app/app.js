@@ -1,5 +1,7 @@
 var app = Sammy("#main", function() {
+
    this.use("Mustache", "m");
+
    this.get("#/", function() {
       var ctx = this;
       ctx.load("/rest/test/all", function(allData) {
@@ -10,6 +12,7 @@ var app = Sammy("#main", function() {
       });
    });
 });
+
 $(function() {
    app.run("#/");
 });
