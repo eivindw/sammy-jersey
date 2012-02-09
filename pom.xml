@@ -12,13 +12,14 @@
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <!-- Web framework versions -->
       <jettyVersion>7.5.3.v20111011</jettyVersion>
-      <glassfishVersion>2.1.v20100127</glassfishVersion>
       <jstlVersion>1.2</jstlVersion>
       <jerseyVersion>1.9.1</jerseyVersion>
-      <jacksonVersion>1.9.0</jacksonVersion>
+      <guavaVersion>10.0.1</guavaVersion>
+      <!-- Test versions -->
+      <junitVersion>4.10</junitVersion>
+      <commonsIOVersion>2.1</commonsIOVersion>
+      <mockitoVersion>1.9.0-rc1</mockitoVersion>
       <!-- Maven plugin versions -->
-      <compilerPluginVersion>2.3.2</compilerPluginVersion>
-      <warPluginVersion>2.1</warPluginVersion>
       <execPluginVersion>1.2.1</execPluginVersion>
       <jasminePluginVersion>1.0.2-beta-5</jasminePluginVersion>
       <wro4jPluginVersion>1.4.1</wro4jPluginVersion>
@@ -26,13 +27,6 @@
 
    <build>
       <plugins>
-         <plugin>
-            <artifactId>maven-war-plugin</artifactId>
-            <version>${warPluginVersion}</version>
-            <configuration>
-               <packagingExcludes>**/jetty*.jar,**/servlet-api*.jar</packagingExcludes>
-            </configuration>
-         </plugin>
          <plugin>
             <groupId>org.mortbay.jetty</groupId>
             <artifactId>jetty-maven-plugin</artifactId>
@@ -140,13 +134,13 @@
       <dependency>
          <groupId>commons-io</groupId>
          <artifactId>commons-io</artifactId>
-         <version>2.1</version>
+         <version>${commonsIOVersion}</version>
          <scope>test</scope>
       </dependency>
       <dependency>
          <groupId>junit</groupId>
          <artifactId>junit-dep</artifactId>
-         <version>4.10</version>
+         <version>${junitVersion}</version>
          <scope>test</scope>
       </dependency>
       <dependency>
@@ -158,35 +152,14 @@
       <dependency>
          <groupId>org.mockito</groupId>
          <artifactId>mockito-core</artifactId>
-         <version>1.9.0-rc1</version>
+         <version>${mockitoVersion}</version>
          <scope>test</scope>
-      </dependency>
-      <dependency>
-         <groupId>org.hamcrest</groupId>
-         <artifactId>hamcrest-library</artifactId>
-         <version>1.3.RC2</version>
-         <scope>compile</scope>
       </dependency>
       <!-- Jetty -->
       <dependency>
          <groupId>org.eclipse.jetty</groupId>
          <artifactId>jetty-servlet</artifactId>
          <version>${jettyVersion}</version>
-      </dependency>
-      <dependency>
-         <groupId>org.eclipse.jetty</groupId>
-         <artifactId>jetty-server</artifactId>
-         <version>${jettyVersion}</version>
-      </dependency>
-      <dependency>
-         <groupId>org.eclipse.jetty</groupId>
-         <artifactId>jetty-webapp</artifactId>
-         <version>${jettyVersion}</version>
-      </dependency>
-      <dependency>
-         <groupId>org.mortbay.jetty</groupId>
-         <artifactId>jsp-2.1-glassfish</artifactId>
-         <version>${glassfishVersion}</version>
       </dependency>
       <!-- Webapp -->
       <dependency>
@@ -200,42 +173,12 @@
          <artifactId>jersey-json</artifactId>
          <version>${jerseyVersion}</version>
          <scope>compile</scope>
-         <exclusions>
-            <exclusion>
-               <groupId>com.sun.xml.bind</groupId>
-               <artifactId>jaxb-impl</artifactId>
-            </exclusion>
-         </exclusions>
-      </dependency>
-      <dependency>
-         <groupId>org.codehaus.jackson</groupId>
-         <artifactId>jackson-jaxrs</artifactId>
-         <version>${jacksonVersion}</version>
-         <scope>compile</scope>
-      </dependency>
-      <dependency>
-         <groupId>org.codehaus.jackson</groupId>
-         <artifactId>jackson-core-asl</artifactId>
-         <version>${jacksonVersion}</version>
-         <scope>compile</scope>
-      </dependency>
-      <dependency>
-         <groupId>org.codehaus.jackson</groupId>
-         <artifactId>jackson-mapper-asl</artifactId>
-         <version>${jacksonVersion}</version>
-         <scope>compile</scope>
-      </dependency>
-      <dependency>
-         <groupId>org.codehaus.jackson</groupId>
-         <artifactId>jackson-xc</artifactId>
-         <version>${jacksonVersion}</version>
-         <scope>compile</scope>
       </dependency>
       <!-- General -->
       <dependency>
          <groupId>com.google.guava</groupId>
          <artifactId>guava</artifactId>
-         <version>10.0.1</version>
+         <version>${guavaVersion}</version>
          <scope>compile</scope>
       </dependency>
    </dependencies>
