@@ -35,7 +35,7 @@
       <url-pattern>rest/*</url-pattern>
    </servlet-mapping>
    <mime-mapping>
-      <extension>.tmpl</extension>
+      <extension>.m</extension>
       <mime-type>text/html</mime-type>
    </mime-mapping>
 </web-app>
