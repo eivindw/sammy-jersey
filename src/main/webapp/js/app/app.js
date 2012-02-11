@@ -4,15 +4,18 @@ var app = Sammy("#main", function() {
 
    this.get("#/", function() {
       var ctx = this;
-      ctx.load("/rest/test/all", function(allData) {
-         var templateData = {data: JSON.parse(allData)};
-         ctx.render("/template/test.m", templateData, function(html) {
-            ctx.swap(html);
-         });
+      $.ajax({
+         url: "/rest/test/all",
+         success: function(allData) {
+            var templateData = {data: allData};
+            $.ajax({
+               url: "/template/test.m",
+               success: function(template) {
+                  var html = ctx.m(template, templateData);
+                  ctx.swap(html);
+               }
+            });
+         }
       });
    });
-});
-
-$(function() {
-   app.run("#/");
 });

@@ -55,17 +55,18 @@
             </executions>
             <configuration>
                <sourceIncludes>
-                  <include>**/*.js</include>
+                  <include>lib/*.js</include>
+                  <include>app/*.js</include>
                </sourceIncludes>
-               <jsSrcDir>src/main/webapp</jsSrcDir>
+               <jsSrcDir>src/main/webapp/js</jsSrcDir>
                <specIncludes>
-                  <include>**/sinon*.js</include>
-                  <include>**/jasmine*.js</include>
-                  <include>**/*.js</include>
+                  <include>lib/sinon*.js</include>
+                  <include>lib/jasmine*.js</include>
+                  <include>spec/*.js</include>
                </specIncludes>
             </configuration>
          </plugin>
-         <plugin>
+         <!--plugin>
             <groupId>ro.isdc.wro4j</groupId>
             <artifactId>wro4j-maven-plugin</artifactId>
             <version>${wro4jPluginVersion}</version>
@@ -82,7 +83,7 @@
                <failNever>true</failNever>
                <targetGroups>app</targetGroups>
             </configuration>
-         </plugin>
+         </plugin-->
       </plugins>
    </build>
 
@@ -111,9 +112,9 @@
                   <configuration>
                      <executable>jscoverage</executable>
                      <arguments>
-                        <argument>--no-instrument=js/plugin</argument>
-                        <argument>src/main/webapp</argument>
-                        <argument>src/main/webapp-instr</argument>
+                        <argument>--no-instrument=lib</argument>
+                        <argument>src/main/webapp/js</argument>
+                        <argument>src/test/jsinstrumented</argument>
                      </arguments>
                   </configuration>
                </plugin>
@@ -121,7 +122,7 @@
                   <groupId>com.github.searls</groupId>
                   <artifactId>jasmine-maven-plugin</artifactId>
                   <configuration>
-                     <jsSrcDir>src/main/webapp-instr</jsSrcDir>
+                     <jsSrcDir>src/test/jsinstrumented</jsSrcDir>
                   </configuration>
                </plugin>
             </plugins>
