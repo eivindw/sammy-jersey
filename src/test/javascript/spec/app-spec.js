@@ -4,7 +4,7 @@ describe("Application", function() {
    beforeEach(function() {
       var stubLookup = {
          "/rest/test/all": {name: "test"},
-         "/template/test.m": "<h2>{{data.name}}</h2>"
+         "/js/template/test.m": "<h2>{{data.name}}</h2>"
       };
       stub = sinon.stub($, "ajax", function() {
          arguments[0].success(stubLookup[arguments[0].url]);

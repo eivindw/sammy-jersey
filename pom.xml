@@ -113,6 +113,7 @@
                      <executable>jscoverage</executable>
                      <arguments>
                         <argument>--no-instrument=lib</argument>
+                        <argument>--no-instrument=template</argument>
                         <argument>src/main/webapp/js</argument>
                         <argument>src/test/jsinstrumented</argument>
                      </arguments>
