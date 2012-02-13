@@ -80,7 +80,6 @@
                </execution>
             </executions>
             <configuration>
-               <failNever>true</failNever>
                <targetGroups>app</targetGroups>
             </configuration>
          </plugin>
