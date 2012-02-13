@@ -56,6 +56,7 @@
             <configuration>
                <sourceIncludes>
                   <include>lib/*.js</include>
+                  <include>app/namespace.js</include>
                   <include>app/*.js</include>
                </sourceIncludes>
                <jsSrcDir>src/main/webapp/js</jsSrcDir>

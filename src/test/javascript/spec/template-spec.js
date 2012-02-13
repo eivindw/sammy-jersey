@@ -1,5 +1,5 @@
 describe("Templates", function() {
-   it("should load templates from file system", function() {
+   it("should merge template with data", function() {
       var tmpl = readTemplate("test.m");
       var html = readTestFile("test.html");
       var data = {data: [{name: "test1"}, {name: "test2"}]};

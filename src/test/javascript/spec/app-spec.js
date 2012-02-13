@@ -15,12 +15,13 @@ describe("Application", function() {
       stub.restore();
    });
 
-   it("should merge template with rest data to main element", function() {
+   it("should run app and get html", function() {
       var $main = inject({id: "main"});
 
-      app.run("#/");
+      sj.app.run("#/");
 
       expect(stub).toHaveBeenCalledTwice();
       expect($main).toContain("h2");
+      expect($main).toHaveHtml("<h2>test</h2>");
    });
 });

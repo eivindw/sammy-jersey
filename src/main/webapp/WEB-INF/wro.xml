@@ -3,6 +3,7 @@
 <groups xmlns="http://www.isdc.ro/wro">
    <group name="app">
       <!--css>/css/global.css</css-->
+      <js>/js/app/namespace.js</js>
       <js>/js/app/*.js</js>
    </group>
 </groups>
