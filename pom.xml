@@ -66,7 +66,7 @@
                </specIncludes>
             </configuration>
          </plugin>
-         <!--plugin>
+         <plugin>
             <groupId>ro.isdc.wro4j</groupId>
             <artifactId>wro4j-maven-plugin</artifactId>
             <version>${wro4jPluginVersion}</version>
@@ -83,7 +83,7 @@
                <failNever>true</failNever>
                <targetGroups>app</targetGroups>
             </configuration>
-         </plugin-->
+         </plugin>
       </plugins>
    </build>
 
