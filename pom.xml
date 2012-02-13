@@ -80,7 +80,6 @@
                </execution>
             </executions>
             <configuration>
-               <options>browser,devel,jquery,loopfunc</options>
                <failNever>true</failNever>
                <targetGroups>app</targetGroups>
             </configuration>
