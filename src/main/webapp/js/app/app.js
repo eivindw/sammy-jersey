@@ -5,15 +5,20 @@
       this.use("Mustache", "m");
 
       this.get("#/", function() {
-         var ctx = this;
+         this.loadDataTemplate("/rest/test/all", "/js/template/test.m");
+      });
 
-         sj.ajax.load("/rest/test/all", function(allData) {
-            sj.ajax.load("/js/template/test.m", function(template) {
-               var templateData = {data: allData};
-               var html = ctx.m(template, templateData);
-               ctx.swap(html);
+      this.helpers({
+         loadDataTemplate: function(dataPath, templatePath) {
+            var ctx = this;
+            sj.ajax.load(dataPath, function(allData) {
+               sj.ajax.load(templatePath, function(template) {
+                  var templateData = {data: allData};
+                  var html = ctx.m(template, templateData);
+                  ctx.swap(html);
+               });
             });
-         });
+         }
       });
    });
 }(sj));
