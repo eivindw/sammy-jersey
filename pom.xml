@@ -63,6 +63,7 @@
                <specIncludes>
                   <include>lib/sinon*.js</include>
                   <include>lib/jasmine*.js</include>
+                  <include>lib/*.js</include>
                   <include>spec/*.js</include>
                </specIncludes>
             </configuration>
