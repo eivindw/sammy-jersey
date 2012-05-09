@@ -1,6 +1,6 @@
-xdescribe("Templates", function() {
+describe("Templates", function() {
    it("should merge template with data", function() {
-      var tmpl = readTemplate("test.d");
+      var tmpl = readTemplate("test.dust");
       var html = readTestFile("test.html");
       var data = {data: [{name: "test1"}, {name: "test2"}]};
 

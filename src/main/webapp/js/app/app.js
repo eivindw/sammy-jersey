@@ -3,18 +3,16 @@
       "use strict";
 
       this.get("#/", function() {
-         this.loadDataTemplate("/rest/test/all", "/js/template/test.d");
+         this.loadDataTemplate("/rest/test/all", "test");
       });
 
       this.helpers({
-         loadDataTemplate: function(dataPath, templatePath) {
+         loadDataTemplate: function(dataPath, templateName) {
             var ctx = this;
             sj.ajax.loadData(dataPath, function(allData) {
-               sj.ajax.loadTemplate(templatePath, function(template) {
-                  var templateData = {data: allData};
-                  dust.renderSource(template, templateData, function(err, out) {
-                     ctx.swap(out);
-                  });
+               var templateData = {data: allData};
+               dust.render(templateName, templateData, function(err, out) {
+                  ctx.swap(out);
                });
             });
          }

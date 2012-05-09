@@ -2,8 +2,16 @@
 
 <groups xmlns="http://www.isdc.ro/wro">
    <group name="app">
-      <!--css>/css/global.css</css-->
       <js>/js/app/namespace.js</js>
-      <js>/js/app/*.js</js>
+      <js>/js/app/ajax.js</js>
+      <js>/js/app/app.js</js>
+   </group>
+   <group name="lib">
+      <js>/js/lib/jquery*.js</js>
+      <js>/js/lib/sammy*.js</js>
+      <js>/js/lib/dust*.js</js>
+   </group>
+   <group name="templates">
+      <js>/js/template/*.dust</js>
    </group>
 </groups>

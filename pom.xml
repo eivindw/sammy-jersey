@@ -17,12 +17,11 @@
       <guavaVersion>10.0.1</guavaVersion>
       <!-- Test versions -->
       <junitVersion>4.10</junitVersion>
-      <commonsIOVersion>2.1</commonsIOVersion>
       <mockitoVersion>1.9.0-rc1</mockitoVersion>
       <!-- Maven plugin versions -->
       <execPluginVersion>1.2.1</execPluginVersion>
       <jasminePluginVersion>1.0.2-beta-5</jasminePluginVersion>
-      <wro4jPluginVersion>1.4.1</wro4jPluginVersion>
+      <wro4jVersion>1.4.5</wro4jVersion>
    </properties>
 
    <build>
@@ -71,7 +70,7 @@
          <plugin>
             <groupId>ro.isdc.wro4j</groupId>
             <artifactId>wro4j-maven-plugin</artifactId>
-            <version>${wro4jPluginVersion}</version>
+            <version>${wro4jVersion}</version>
             <executions>
                <execution>
                   <phase>test</phase>
@@ -134,12 +133,6 @@
    <dependencies>
       <!-- Test -->
       <dependency>
-         <groupId>commons-io</groupId>
-         <artifactId>commons-io</artifactId>
-         <version>${commonsIOVersion}</version>
-         <scope>test</scope>
-      </dependency>
-      <dependency>
          <groupId>junit</groupId>
          <artifactId>junit-dep</artifactId>
          <version>${junitVersion}</version>
@@ -175,6 +168,18 @@
          <artifactId>jersey-json</artifactId>
          <version>${jerseyVersion}</version>
          <scope>compile</scope>
+      </dependency>
+      <dependency>
+         <groupId>ro.isdc.wro4j</groupId>
+         <artifactId>wro4j-core</artifactId>
+         <version>${wro4jVersion}</version>
+         <scope>runtime</scope>
+      </dependency>
+      <dependency>
+         <groupId>ro.isdc.wro4j</groupId>
+         <artifactId>wro4j-extensions</artifactId>
+         <version>${wro4jVersion}</version>
+         <scope>runtime</scope>
       </dependency>
       <!-- General -->
       <dependency>
