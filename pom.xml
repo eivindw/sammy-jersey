@@ -22,7 +22,7 @@
       <!-- Maven plugin versions -->
       <execPluginVersion>1.2.1</execPluginVersion>
       <jasminePluginVersion>1.0.2-beta-5</jasminePluginVersion>
-      <wro4jVersion>1.4.5</wro4jVersion>
+      <wro4jVersion>1.4.6</wro4jVersion>
    </properties>
 
    <build>
