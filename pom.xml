@@ -15,6 +15,7 @@
       <jstlVersion>1.2</jstlVersion>
       <jerseyVersion>1.9.1</jerseyVersion>
       <guavaVersion>10.0.1</guavaVersion>
+      <slf4jVersion>1.6.4</slf4jVersion>
       <!-- Test versions -->
       <junitVersion>4.10</junitVersion>
       <mockitoVersion>1.9.0-rc1</mockitoVersion>
@@ -187,6 +188,12 @@
          <artifactId>guava</artifactId>
          <version>${guavaVersion}</version>
          <scope>compile</scope>
+      </dependency>
+      <dependency>
+         <groupId>org.slf4j</groupId>
+         <artifactId>slf4j-log4j12</artifactId>
+         <version>${slf4jVersion}</version>
+         <scope>runtime</scope>
       </dependency>
    </dependencies>
 </project>
